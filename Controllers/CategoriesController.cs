@@ -59,6 +59,7 @@ namespace EnitityDemo.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Name,DisplayOrder,CreatedDateTime")] Category category)
         {
+            helper.Write();
             if (ModelState.IsValid)
             {
                 _context.Add(category);
